@@ -1,0 +1,27 @@
+```sql
+Student:
+id (Int, primary key, auto-increments)
+email (String, unique)
+name (String, optional)
+Class (Classe, optional, one-to-many relationship, referenced by classId)
+classId (Int, optional)
+grade (Grade, many-to-many relationship)
+
+Classe:
+id (Int, primary key, auto-increments)
+name (String, optional)
+student (Student, one-to-many relationship)
+
+Subject:
+id (Int, primary key, auto-increments)
+name (String, optional)
+notes (Grade, one-to-many relationship)
+
+Grade:
+id (Int, primary key, auto-increments)
+value (Int)
+student (Student, many-to-one relationship, referenced by studentId)
+studentId (Int)
+subject (Subject, many-to-one relationship, referenced by subjectId)
+subjectId (Int)
+```
